@@ -5,7 +5,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      api: []
+      api: [],
+      search: ''
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -24,15 +25,19 @@ class App extends React.Component {
 
   handleChange(event){
     const value = event.currentTarget.value;
-    console.log(value);
+    this.setState ({
+      search: value
+    })
   }
 
   render() {
     return (
       <div className="App">
-        <input type="text" onChange={this.handleChange}></input>
+        <input type="text" value={this.state.search} onChange={this.handleChange}></input>
         <ul>
-          {this.state.api.map(item =>
+          {this.state.api
+          .filter(item=> item.name.toUpperCase().includes(this.state.search.toUpperCase()))
+          .map(item =>
             <li key = {item.id}>
               <div>
                 <h2>{item.name}</h2>
