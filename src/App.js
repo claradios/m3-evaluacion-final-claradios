@@ -7,6 +7,7 @@ class App extends React.Component {
     this.state = {
       api: []
     }
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -21,12 +22,18 @@ class App extends React.Component {
       })
   }
 
+  handleChange(event){
+    const value = event.currentTarget.value;
+    console.log(value);
+  }
+
   render() {
     return (
       <div className="App">
+        <input type="text" onChange={this.handleChange}></input>
         <ul>
           {this.state.api.map(item =>
-            <li>
+            <li key = {item.id}>
               <div>
                 <h2>{item.name}</h2>
                 <p>{item.species}</p>
