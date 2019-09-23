@@ -41,8 +41,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App__header">
-          <div className="header__container">            
-            <img className="header__img" src="https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png" alt="Rick and Morty Logo"></img>
+          <div className="header__container">   
+          <h1 className="App__title">Rick and Morty Searcher</h1>         
+            {/* <img className="header__img" src="https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png" alt="Rick and Morty Logo"></img> */}
           </div>
         </header>
         <Switch>
