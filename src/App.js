@@ -40,13 +40,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <header className="App__header">
+          <div className="header__container">            
+            <img className="header__img" src="https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png" alt="Rick and Morty Logo"></img>
+          </div>
+        </header>
         <Switch>
           <Route exact path="/" render={() => {
             return (
               <Home
                 search={this.state.search}
                 handleChange={this.handleChange}
-                api={this.state.api}                
+                api={this.state.api}
               />
             );
           }} />
