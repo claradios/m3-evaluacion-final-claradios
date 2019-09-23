@@ -1,0 +1,18 @@
+.app__search_containter{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items:center; 
+    flex-direction:column;
+}
+
+.app__search-label{
+ color:black;
+}
+
+.app__search{    
+    height:20px;
+    width:250px;
+    background-color:black;
+    border: 2px solid #44b7fa ;
+}

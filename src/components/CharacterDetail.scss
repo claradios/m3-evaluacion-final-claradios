@@ -1,0 +1,41 @@
+.detail__container{
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+
+.character-detail{
+    background-color:#44b7fa;
+    color:white;
+    width:600px;
+    padding:30px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.character-detail-text{
+    padding:25px;
+}
+
+.character-detail__info{
+
+}
+
+.character-detail__img-ct{
+
+}
+
+.character-detail__img{
+
+}
+
+.app__back{
+    margin-bottom:10px;
+    width:600px;
+    display:block;
+    color:white;
+    text-align: right;
+}

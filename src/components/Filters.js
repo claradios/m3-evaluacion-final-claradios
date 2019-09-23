@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Filters.scss';
 
 class Filters extends React.Component {
     render() {
         return (
-            <div className="search__containter">
-                <label htmlFor="inputSearch">introduce tu búsqueda</label>
-                <input type="text" value={this.props.search} onChange={this.props.handleChange}></input>
+            <div className="app__search_containter">
+                <label className="app__search-label" htmlFor="inputSearch">introduce tu búsqueda</label>
+                <input className="app__search" type="text" value={this.props.search} onChange={this.props.handleChange}></input>
             </div>
         );
     }

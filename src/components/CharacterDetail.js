@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './CharacterDetail.scss';
 
 const CharacterDetail = props => {
     const { routerProps, api } = props;
@@ -20,17 +21,19 @@ const CharacterDetail = props => {
     if (character[0]) {
         const { name, image, status, species, origin, episode } = character[0];
         return (
-            <React.Fragment>
+            <div className="detail__container">
+                <Link to="/" className="app__back">>Volver</Link>
                 <div className="character-detail">
-                    <h2 className="character-detail__name">{name}</h2>
-                    <p className="character-detail__name">{status}</p>
-                    <p className="character-detail__name">{species}</p>
-                    <p className="character-detail__name">{origin.name}</p>
-                    <p className="character-detail__name">{episode.length}</p>
-                    <div className="character-detail__img"><img src={image} alt={name} /></div>
-                </div>
-                <Link to="/" className="app__back">Volver al listado</Link>
-            </React.Fragment>
+                    <div className="character-detail-text">
+                        <h2 className="character-detail__info">{name}</h2>
+                        <p className="character-detail__info">{status}</p>
+                        <p className="character-detail__info">{species}</p>
+                        <p className="character-detail__info">{origin.name}</p>
+                        <p className="character-detail__info">{episode.length}</p>
+                    </div>
+                    <div className="character-detail__img-ct"><img className="character-detail__img" src={image} alt={name} /></div>
+                </div>                
+            </div>
         );
     } else {
         return (

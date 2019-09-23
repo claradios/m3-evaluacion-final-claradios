@@ -2,15 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CharacterCard from './CharacterCard';
 import { Link } from 'react-router-dom';
+import './CharacterList.scss'
 
 class CharacterList extends React.Component {
     render() {
         return (
-            <ul>
+            <ul className="app__list">
                 {this.props.api
                     .filter(item => item.name.toUpperCase().includes(this.props.search.toUpperCase()))
                     .map(item =>
-                        <li key={item.id}>
+                        <li className="app__character" key={item.id}>
                             <Link to={`/character-detail/${item.id}`} className="character__link">
                                 <CharacterCard
                                     name={item.name}

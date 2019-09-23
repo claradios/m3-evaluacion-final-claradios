@@ -1,0 +1,17 @@
+.app__list{
+    display:flex;
+    align-content: center;
+    flex-wrap: wrap;
+    list-style:none;
+      
+}
+
+.app__character{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    margin:15px;
+}
+.character__link{
+    text-decoration: none;
+}
