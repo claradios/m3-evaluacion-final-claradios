@@ -1,5 +1,5 @@
 
-## Rick and Morty Character Finder repository
+## Rick and Morty Character Finder 
 
 This is a responsive app build with React framework, javascript, html and scss. If you are cloning or downloading this repository please make sure you are able to run npm start and have the node modules folder. If not, you can try typing this line on your terminal:
 npm install --save react-router-dom node-sass prop-types. 
