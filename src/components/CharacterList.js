@@ -19,7 +19,6 @@ const CharacterList = props => {
                                 image={item.image}
                             ></CharacterCard>
                         </Link>
-
                     </li>
                 )}
         </ul>);
