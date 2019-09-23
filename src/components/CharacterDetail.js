@@ -26,13 +26,27 @@ const CharacterDetail = props => {
                 <div className="character-detail">
                     <div className="character-detail-text">
                         <h2 className="character-detail__info">{name}</h2>
-                        <p className="character-detail__info">{status}</p>
-                        <p className="character-detail__info">{species}</p>
-                        <p className="character-detail__info">{origin.name}</p>
-                        <p className="character-detail__info">{episode.length}</p>
+                        <div className="ch__info-box">
+                            <h3 className="character-detail__title">status:</h3>
+                            <p className="character-detail__info">{status}</p>
+                        </div>
+                        <div className="ch__info-box">
+
+                            <h3 className="character-detail__title">species:</h3>
+                            <p className="character-detail__info">{species}</p>
+                        </div>
+                        <div className="ch__info-box">
+                            <h3 className="character-detail__title">origin:</h3>
+                            <p className="character-detail__info">{origin.name}</p>
+                        </div>
+                        <div className="ch__info-box">
+
+                            <h3 className="character-detail__title">episodes:</h3>
+                            <p className="character-detail__info">{episode.length}</p>
+                        </div>
                     </div>
                     <div className="character-detail__img-ct"><img className="character-detail__img" src={image} alt={name} /></div>
-                </div>                
+                </div>
             </div>
         );
     } else {
