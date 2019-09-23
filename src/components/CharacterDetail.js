@@ -34,8 +34,8 @@ const CharacterDetail = props => {
                             </li>
                             <li>
                                 <p className="character-detail__info">species:<span className="ch-det__answer"> {species}</span>
-                                    {species === 'Human' ? <span className="icon-container"> <i class="fas fa-user"></i></span>
-                                        : <span className="icon-container"> <i class="fab fa-reddit-alien"></i></span>}
+                                    {species === 'Human' ? <span className="icon-container"> <i className="fas fa-user"></i></span>
+                                        : <span className="icon-container"> <i className="fab fa-reddit-alien"></i></span>}
                                 </p>
                             </li>
                             <li>
