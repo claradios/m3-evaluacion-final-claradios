@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import { fetchCharacters } from './services/fetchCharacters';
-import CharacterList from './components/CharacterList'
+import CharacterList from './components/CharacterList';
+import Filters from './components/Filters';
 import PropTypes from 'prop-types';
 class App extends React.Component {
   constructor(props) {
@@ -37,22 +38,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <label htmlFor="inputSearch">introduce tu búsqueda</label>
-        <input type="text" value={this.state.search} onChange={this.handleChange}></input>
-        <CharacterList api = {this.state.api} search={this.state.search}></CharacterList>
-        <ul>
-          {this.state.api
-          .filter(item=> item.name.toUpperCase().includes(this.state.search.toUpperCase()))
-          .map(item =>
-            <li key = {item.id}>
-              <div>
-                <h2>{item.name}</h2>
-                <p>{item.species}</p>
-                <div><img src={item.image} alt={`portrait of ${item.name}`}></img></div>
-              </div>
-            </li>
-          )}
-        </ul>
+        <Filters 
+        search={this.state.search} 
+        handleChange={this.handleChange}
+        ></Filters> 
+        <CharacterList 
+        api = {this.state.api} 
+        search={this.state.search}
+        ></CharacterList>
       </div>
     );
   }

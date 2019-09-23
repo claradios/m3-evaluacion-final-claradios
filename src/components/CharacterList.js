@@ -20,5 +20,10 @@ class CharacterList extends React.Component {
     }
 }
 
+CharacterList.propTypes = {
+    api: PropTypes.arrayOf(PropTypes.object).isRequired,
+    search: PropTypes.string.isRequired
+}
+
 
 export default CharacterList;
