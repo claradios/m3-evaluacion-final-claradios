@@ -3,7 +3,7 @@ import './App.css';
 import { fetchCharacters } from './services/fetchCharacters';
 import CharacterList from './components/CharacterList';
 import Filters from './components/Filters';
-import PropTypes from 'prop-types';
+
 class App extends React.Component {
   constructor(props) {
     super(props);

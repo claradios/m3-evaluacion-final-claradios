@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CharacterCard from './CharacterCard';
 
 class CharacterList extends React.Component {
     render() {
@@ -9,11 +10,11 @@ class CharacterList extends React.Component {
                     .filter(item => item.name.toUpperCase().includes(this.props.search.toUpperCase()))
                     .map(item =>
                         <li key={item.id}>
-                            <div>
-                                <h2>{item.name}</h2>
-                                <p>{item.species}</p>
-                                <div><img src={item.image} alt={`portrait of ${item.name}`}></img></div>
-                            </div>
+                            <CharacterCard 
+                            name ={item.name}
+                            species={item.species}
+                            image = {item.image}
+                            ></CharacterCard>     
                         </li>
                     )}
             </ul>);
