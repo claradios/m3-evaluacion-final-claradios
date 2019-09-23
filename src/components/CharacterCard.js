@@ -2,20 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './CharacterCard.scss'
 
-class CharacterCard extends React.Component {
-    render() {
+const CharacterCard = props => {
+    const {name, species, image} = props;
+    
         return (
             <div className="card__container">
                 <div className="card_info-container">
-                <h2 className="card__title">{this.props.name}</h2>
-                <p className="card__species">{this.props.species}</p>
+                <h2 className="card__title">{name}</h2>
+                <p className="card__species">{species}</p>
                 </div>
                 <div className="card__img-container">
-                    <img className="card__img" src={this.props.image} alt={`portrait of ${this.props.name}`}></img>
+                    <img className="card__img" src={image} alt={`portrait of ${name}`}></img>
                 </div>
             </div>
         );
-    }
+    
 }
 
 CharacterCard.propTypes = {
