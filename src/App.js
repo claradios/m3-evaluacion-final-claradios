@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import Home from './components/Home';
+import CharacterDetail from './components/CharacterDetail';
 import { fetchCharacters } from './services/fetchCharacters';
 import CharacterList from './components/CharacterList';
 import Filters from './components/Filters';
@@ -18,19 +21,19 @@ class App extends React.Component {
     this.getCharacters();
   }
   getCharacters() {
-    
+
     fetchCharacters()
       .then(data => {
-        
+
         this.setState({
           api: data.results
         })
       })
   }
 
-  handleChange(event){
+  handleChange(event) {
     const value = event.currentTarget.value;
-    this.setState ({
+    this.setState({
       search: value
     })
   }
@@ -38,17 +41,29 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Filters 
-        search={this.state.search} 
-        handleChange={this.handleChange}
-        ></Filters> 
-        <CharacterList 
-        api = {this.state.api} 
-        search={this.state.search}
-        ></CharacterList>
+        <Switch>
+          <Route exact path="/" render={() => {
+            return (
+              <Home
+                search={this.state.search}
+                handleChange={this.handleChange}
+                api={this.state.api}                
+              />
+            );
+          }} />
+          <Route path="/character-detail/:characterId" render={routerProps => {
+            return (
+              <CharacterDetail
+                routerProps={routerProps}
+                api={this.state.api}
+              />
+            );
+          }} />
+        </Switch>
       </div>
     );
   }
 }
 
 export default App;
+
