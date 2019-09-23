@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import { fetchCharacters } from './services/fetchCharacters';
+import CharacterList from './components/CharacterList'
+import PropTypes from 'prop-types';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -15,8 +17,10 @@ class App extends React.Component {
     this.getCharacters();
   }
   getCharacters() {
+    
     fetchCharacters()
       .then(data => {
+        
         this.setState({
           api: data.results
         })
@@ -33,7 +37,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <label htmlFor="inputSearch">introduce tu búsqueda</label>
         <input type="text" value={this.state.search} onChange={this.handleChange}></input>
+        <CharacterList api = {this.state.api} search={this.state.search}></CharacterList>
         <ul>
           {this.state.api
           .filter(item=> item.name.toUpperCase().includes(this.state.search.toUpperCase()))
