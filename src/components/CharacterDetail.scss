@@ -3,13 +3,14 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column;
+    flex-direction:column;    
 }
 
 .character-detail{
     background-color:#44b7fa;
     color:white;
     padding:30px;
+    box-shadow: 0 0 20px greenyellow;
 
     @media all and (min-width: 768px) {
         width:600px;
@@ -40,6 +41,7 @@
 }
 .character-detail-text{
    order:2;
+   max-width:215px;
    padding-right: 30px;
    padding-bottom:30px;
 }
@@ -53,7 +55,7 @@
 }
 
 .app__back{
-    margin-bottom:10px;    
+    margin-bottom:20px;    
     display:block;
     color:white;
     text-align: right;
