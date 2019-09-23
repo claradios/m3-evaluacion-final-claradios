@@ -25,25 +25,40 @@ const CharacterDetail = props => {
                 <Link to="/" className="app__back">>Volver</Link>
                 <div className="character-detail">
                     <div className="character-detail-text">
-                        <h2 className="character-detail__info">{name}</h2>
-                        <div className="ch__info-box">
-                            <h3 className="character-detail__title">status:</h3>
-                            <p className="character-detail__info">{status}</p>
-                        </div>
-                        <div className="ch__info-box">
+                        <h3 className="character-detail__title">{name}</h3>
+                        <ul className="character-detail__characteristics">
+                            <li className="character-detail__item">
+                                <p className="character-detail__info">status:<span className="ch-det__answer"> {status}</span>
+                                    {status === 'Dead' ? <span className="icon-container"> <i className="fas fa-skull-crossbones"></i></span> : null}
+                                </p>
+                            </li>
+                            <li>
+                                <p className="character-detail__info">species:<span className="ch-det__answer"> {species}</span>
+                                    {species === 'Human' ? <span className="icon-container"> <i class="fas fa-user"></i></span>
+                                        : <span className="icon-container"> <i class="fab fa-reddit-alien"></i></span>}
+                                </p>
+                            </li>
+                            <li>
+                                <p className="character-detail__info">origin:<span className="ch-det__answer"> {origin.name}</span></p>
+                            </li>
+                            <li>
+                                <p className="character-detail__info">episodes:<span className="ch-det__answer"> {episode.length}</span></p>
+                            </li>
+                        </ul>
 
-                            <h3 className="character-detail__title">species:</h3>
-                            <p className="character-detail__info">{species}</p>
-                        </div>
-                        <div className="ch__info-box">
-                            <h3 className="character-detail__title">origin:</h3>
-                            <p className="character-detail__info">{origin.name}</p>
-                        </div>
-                        <div className="ch__info-box">
 
-                            <h3 className="character-detail__title">episodes:</h3>
-                            <p className="character-detail__info">{episode.length}</p>
-                        </div>
+
+
+
+
+
+
+
+
+
+                        {/* <span className="icon-container"> <i class="fas fa-user"></i></span>
+                            <span className="icon-container"><i class="fab fa-reddit-alien"></i></span> */}
+
                     </div>
                     <div className="character-detail__img-ct"><img className="character-detail__img" src={image} alt={name} /></div>
                 </div>
