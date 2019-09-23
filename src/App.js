@@ -24,7 +24,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        HOLA QUE ASE
+        <ul>
+          {this.state.api.map(item=>
+            <li>{item.name}</li>
+          )}
+        </ul>
       </div>
     );
   }
