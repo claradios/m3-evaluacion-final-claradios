@@ -4,13 +4,14 @@ import CharacterList from './CharacterList';
 import PropTypes from 'prop-types';
 
 const Home = props => {
-  const {search, api, handleChange} = props;
+  const {search, api, handleChange,handleChangeEpisode} = props;
 
   return (
     <Fragment>
       <Filters 
         search={search} 
         handleChange={handleChange}
+        handleChangeEpisode ={handleChangeEpisode}
         ></Filters> 
         <CharacterList 
         api = {api} 
@@ -21,6 +22,7 @@ const Home = props => {
 };
 
 Home.propTypes = {
+  handleChangeEpisode: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
   api: PropTypes.arrayOf(PropTypes.object).isRequired

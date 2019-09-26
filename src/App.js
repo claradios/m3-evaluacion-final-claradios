@@ -14,6 +14,7 @@ class App extends React.Component {
       search: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeEpisode = this.handleChangeEpisode.bind(this);
   }
 
   componentDidMount() {
@@ -37,6 +38,10 @@ class App extends React.Component {
     })
   }
 
+  handleChangeEpisode(event) {
+    console.log(event.currentTarget.value);
+  }
+
   render() {
     return (
       <div className="App">
@@ -52,6 +57,7 @@ class App extends React.Component {
               <Home
                 search={this.state.search}
                 handleChange={this.handleChange}
+                handleChangeEpisode = {this.handleChangeEpisode}
                 api={this.state.api}
               />
             );
